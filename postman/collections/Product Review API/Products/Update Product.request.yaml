@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/products/:productId"
+method: PUT
+headers:
+  Content-Type: application/json
+pathVariables:
+  productId: ""
+body:
+  type: text
+  content: |-
+    {
+      "name": "Wireless Headphones Pro",
+      "price": 89.99
+    }
+examples: ./.resources/Update Product.resources/examples
+order: 4000

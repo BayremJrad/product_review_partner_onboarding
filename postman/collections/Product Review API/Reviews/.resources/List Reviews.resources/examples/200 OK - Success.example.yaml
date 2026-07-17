@@ -1,0 +1,14 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products/prod_001/reviews"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: '{"data":[{"id":"rev_001","productId":"prod_001","userId":"usr_123","userName":"Jane Doe","rating":5,"title":"Great product!","body":"Really happy with this purchase. Sound quality is excellent.","createdAt":"2026-07-10T08:00:00Z"},{"id":"rev_002","productId":"prod_001","userId":"usr_456","userName":"John Smith","rating":4,"title":"Good but pricey","body":"Sound is great but a bit expensive for what you get.","createdAt":"2026-07-12T14:30:00Z"}],"total":2,"page":1,"limit":20}'
+order: 1000

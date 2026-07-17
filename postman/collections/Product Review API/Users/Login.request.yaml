@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{baseUrl}}/users/login"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "email": "jane@example.com",
+      "password": "securepassword123"
+    }
+examples: ./.resources/Login.resources/examples
+order: 2000

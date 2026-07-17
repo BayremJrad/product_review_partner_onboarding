@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/products/:productId/reviews/:reviewId"
+method: DELETE
+pathVariables:
+  productId: ""
+  reviewId: ""
+examples: ./.resources/Delete Review.resources/examples
+order: 4000

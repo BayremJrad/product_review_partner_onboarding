@@ -1,0 +1,248 @@
+{
+  "sdkGenVersion": "1.7.0",
+  "date": "2026-07-17T16:18:41.798Z",
+  "config": {
+    "languages": [
+      "java"
+    ],
+    "deliveryMethods": [
+      "zip"
+    ],
+    "languageOptions": {
+      "python": {
+        "alwaysInitializeOptionals": false,
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      },
+      "typescript": {
+        "bundle": true,
+        "exportClassDefault": false,
+        "httpClient": "fetch",
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "generateEnumAs": "union"
+      },
+      "go": {
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      },
+      "java": {
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "groupId": "com",
+        "artifactId": "productreviewapisdk"
+      },
+      "php": {
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      },
+      "csharp": {
+        "ignoreFiles": [],
+        "liblabVersion": "2",
+        "renameIllegalModelProperties": true,
+        "useOptionalWrapper": true,
+        "validateResponses": false
+      },
+      "cli": {
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      },
+      "kotlin": {
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      },
+      "ruby": {
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      },
+      "rust": {
+        "ignoreFiles": [],
+        "liblabVersion": "2"
+      }
+    },
+    "includeWatermark": false,
+    "responseHeaders": false,
+    "sdkName": "product-review-api-sdk",
+    "sdkVersion": "1.0.0",
+    "customCode": {
+      "trackChanges": true
+    },
+    "ignoreFiles": [],
+    "liblabVersion": "2",
+    "groupId": "com",
+    "artifactId": "productreviewapisdk",
+    "language": "java",
+    "deliveryMethod": "zip",
+    "hooks": {
+      "enabled": false,
+      "sourceDir": ""
+    },
+    "validateResponses": false,
+    "usesFormData": false,
+    "authentication": {},
+    "environmentVariables": [],
+    "fileOutput": "/tmp",
+    "inferServiceNames": false,
+    "httpLibrary": {
+      "name": "axios",
+      "packages": {},
+      "languages": [
+        "typescript"
+      ]
+    },
+    "auth": [],
+    "retry": {
+      "enabled": true,
+      "maxAttempts": 3,
+      "retryDelay": 150,
+      "maxDelay": 5000,
+      "retryDelayJitter": 50,
+      "backOffFactor": 2,
+      "httpMethodsToRetry": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "PATCH",
+        "HEAD",
+        "OPTIONS"
+      ],
+      "maxRetryAfterDelay": 60000
+    },
+    "multiTenant": false,
+    "customQueries": {
+      "paths": [],
+      "rawQueries": [],
+      "queriesData": []
+    },
+    "devContainer": false,
+    "ai": false,
+    "includeOptionalSnippetParameters": true,
+    "specType": "postman",
+    "deprecatedOperations": {
+      "include": true
+    },
+    "multipleResponses": {
+      "enabled": false
+    }
+  },
+  "files": [
+    "pom.xml",
+    ".gitignore",
+    ".github/workflows/release.yml",
+    "src/main/java/com/productreviewapisdk/validation/Violation.java",
+    "src/main/java/com/productreviewapisdk/validation/ViolationAggregator.java",
+    "src/main/java/com/productreviewapisdk/validation/validators/AbstractValidator.java",
+    "src/main/java/com/productreviewapisdk/validation/validators/ListValidator.java",
+    "src/main/java/com/productreviewapisdk/validation/validators/NumericValidator.java",
+    "src/main/java/com/productreviewapisdk/validation/validators/StringValidator.java",
+    "src/main/java/com/productreviewapisdk/validation/validators/Validator.java",
+    "src/main/java/com/productreviewapisdk/validation/validators/modelValidators/AbstractModelValidator.java",
+    "src/main/java/com/productreviewapisdk/validation/exceptions/ValidationException.java",
+    "src/main/java/com/productreviewapisdk/services/BaseService.java",
+    "src/main/java/com/productreviewapisdk/http/HttpMethod.java",
+    "src/main/java/com/productreviewapisdk/http/ModelConverter.java",
+    "src/main/java/com/productreviewapisdk/http/util/ContentTypes.java",
+    "src/main/java/com/productreviewapisdk/http/util/HttpArgumentConverter.java",
+    "src/main/java/com/productreviewapisdk/http/serialization/PathSerializationStyle.java",
+    "src/main/java/com/productreviewapisdk/http/serialization/QuerySerializationStyle.java",
+    "src/main/java/com/productreviewapisdk/http/serialization/SerializationStyle.java",
+    "src/main/java/com/productreviewapisdk/http/serialization/Serializer.java",
+    "src/main/java/com/productreviewapisdk/http/serialization/Util.java",
+    "src/main/java/com/productreviewapisdk/http/interceptors/DefaultHeadersInterceptor.java",
+    "src/main/java/com/productreviewapisdk/exceptions/ApiError.java",
+    "src/main/java/com/productreviewapisdk/http/Environment.java",
+    "src/main/java/com/productreviewapisdk/ProductReviewApiSdk.java",
+    "src/main/java/com/productreviewapisdk/http/interceptors/RetryInterceptor.java",
+    "src/main/java/com/productreviewapisdk/config/RetryConfig.java",
+    "src/main/java/com/productreviewapisdk/config/ProductReviewApiSdkConfig.java",
+    "src/main/java/com/productreviewapisdk/config/RequestConfig.java",
+    "documentation/snippets/snippets.json",
+    "documentation/models/CreateProductRequest.md",
+    "documentation/models/UpdateProductRequest.md",
+    "documentation/models/CreateReviewRequest.md",
+    "documentation/models/RegisterUserRequest.md",
+    "documentation/models/LoginRequest.md",
+    "src/main/java/com/productreviewapisdk/json/TypeUtils.java",
+    "examples/pom.xml",
+    "examples/run.sh",
+    "examples/src/main/java/com/example/Main.java",
+    "examples/.gitignore",
+    ".idea/workspace.xml",
+    ".idea/misc.xml",
+    ".idea/compiler.xml",
+    ".idea/encoding.xml",
+    ".idea/jarRepositories.xml",
+    "src/main/java/com/productreviewapisdk/http/util/RequestBuilder.java",
+    "examples/README.md",
+    ".env.example",
+    "src/main/java/com/productreviewapisdk/models/UpdateProductRequest.java",
+    "src/main/java/com/productreviewapisdk/models/LoginRequest.java",
+    "src/main/java/com/productreviewapisdk/models/RegisterUserRequest.java",
+    "src/main/java/com/productreviewapisdk/models/CreateProductRequest.java",
+    "src/main/java/com/productreviewapisdk/models/CreateReviewRequest.java",
+    "README.md",
+    "documentation/services/ProductReviewApiSdkService.md",
+    "src/main/java/com/productreviewapisdk/services/ProductReviewApiSdkService.java"
+  ],
+  "fileHashes": {
+    ".env.example": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".github/workflows/release.yml": "9a1dcfaa83ce6becc8610cd783950a4f4d8cd47d16c40ebb04511bdeae480e6c",
+    ".gitignore": "16c2381047d584e96eb9c89da75b41f24abb5df5e1b9b770321ef9bf9f46b7b4",
+    ".idea/compiler.xml": "d4b3c50d88d994f6b45771590618d6bb974dd4686aee2207f98e4f2d6425f438",
+    ".idea/encoding.xml": "c08731aff01601ae1dce0f19fe8f058b750a167cdef4fb92b8ba104eeb7ec038",
+    ".idea/jarRepositories.xml": "9c794caa37d870d809db42aa629d5232e5f1a9a76593a28a55898244ecbc75a2",
+    ".idea/misc.xml": "042abf22dfaa2dc7e5f3d7956f778c18bdfb7404f4a9bddd388d49e48e00f90e",
+    ".idea/workspace.xml": "d2ab652282142490b5aec0fcb1f86ac461bf34d44148d4a7101a861ff9a002a1",
+    "README.md": "76544d71726c1fb15d0d53abf8a4f28a51e45b37039374aa18a9c54bde95c9da",
+    "documentation/models/CreateProductRequest.md": "e01ac181f8f02f13a364193b887a4325220e6a2a8c35cd7ff899d115697c1cac",
+    "documentation/models/CreateReviewRequest.md": "ccd42cf4d6c809148784d683e26e55f7d587b1cc99a607710b5698131dc55d6f",
+    "documentation/models/LoginRequest.md": "64e0125a065c68696d9ba92e7ff78ef3c1117a2ec89a092424912950d10dcd85",
+    "documentation/models/RegisterUserRequest.md": "e04ab6eb81e7d40608af0e29cfcdf6b0ee35255748e9b7db532ed963d256796d",
+    "documentation/models/UpdateProductRequest.md": "e0481ef45dc55366d0b20c515f5d7c541ad4083fe723f77c6e48e77720b82d02",
+    "documentation/services/ProductReviewApiSdkService.md": "72459d8b146116811d3895ae2054e4cc63bba5a97cf75e108804a07191421098",
+    "documentation/snippets/snippets.json": "038b9bb15458c8ba10f033e793ce666bcd2656ec29952a1fdb9363f2530a5091",
+    "examples/.gitignore": "16c2381047d584e96eb9c89da75b41f24abb5df5e1b9b770321ef9bf9f46b7b4",
+    "examples/README.md": "fbf0e3f970f24d2685792c809db80fe6baf96f393764d4b36ee7fd899d77b107",
+    "examples/pom.xml": "b2f9e1bc1f2f951c6012fa75853c483a3cf1dc160c0c43af251bda08b0317e09",
+    "examples/run.sh": "b421122e2d707b60e35b125a39a47dd9b1bec16d241aec1ba5a7357816e4757b",
+    "examples/src/main/java/com/example/Main.java": "1f954d485a4313e5b63f7b24d70f4f920c6061c96caf344e57ed3afb1528277c",
+    "pom.xml": "74debb0a99cae553dd7b82f3f2baeb817958028087c5e423dc2cdeb1f7856e36",
+    "prettier.config.js": "2fe33fda52344779fcf235afa8152cfd356880dc3161da09403dc26231bc72d9",
+    "src/main/java/com/productreviewapisdk/ProductReviewApiSdk.java": "dac4b16bc66096d0641bdb3dd5fb5b178ea47285af4419ea2f841c8ddc2d256d",
+    "src/main/java/com/productreviewapisdk/config/ProductReviewApiSdkConfig.java": "384b2554c4dfb27d78ef7c0ab1180bcfdc097f08c777997586d73e325536e66a",
+    "src/main/java/com/productreviewapisdk/config/RequestConfig.java": "627ccee6a8b52489dcd79bc81714bc89553c1e5a96fd3a067062d2dd67febe74",
+    "src/main/java/com/productreviewapisdk/config/RetryConfig.java": "a8347e60b2199f0b2c615a246b64bccb11858d6a853aefbc6c3ede0cd58b99e1",
+    "src/main/java/com/productreviewapisdk/exceptions/ApiError.java": "174b87e7fe4c58d65e12ad744b88bd5284609a81ed8882537cbb70a85cb1b8a5",
+    "src/main/java/com/productreviewapisdk/http/Environment.java": "a12c091b73d4c7d98c4d3c95d9360a6d3e3efff72d6e06928bed2b6ffc6e9b8b",
+    "src/main/java/com/productreviewapisdk/http/HttpMethod.java": "b70c05693e02c26592068af49f04ded5460f3734cad6aa513cab7f0c038cf720",
+    "src/main/java/com/productreviewapisdk/http/ModelConverter.java": "1e1c2337d5afdf365487d9464796714038a2483b034cf89c917b08c908e21fa0",
+    "src/main/java/com/productreviewapisdk/http/interceptors/DefaultHeadersInterceptor.java": "7646e90155e10f10d1c5e48861ea227a5b8821491a3e108e0c85f99e65bcf08f",
+    "src/main/java/com/productreviewapisdk/http/interceptors/RetryInterceptor.java": "04cddc5e039fb259bbaf2df747c757354c9ac57ea1d9b495f4e0d47dbe4508be",
+    "src/main/java/com/productreviewapisdk/http/serialization/PathSerializationStyle.java": "7ef2306a8b11d10876ba4fa85cc935b4e19b6253297754f0699e0e1a6a7fbaed",
+    "src/main/java/com/productreviewapisdk/http/serialization/QuerySerializationStyle.java": "efb8c3355c23f18061407f47ed8b0c8a4f6826df71a28a00b9489cd4cac9d1a8",
+    "src/main/java/com/productreviewapisdk/http/serialization/SerializationStyle.java": "73d0f2571c16288b5732bb1c8f0e877b681f88b06d15a9631222f2a0728d604f",
+    "src/main/java/com/productreviewapisdk/http/serialization/Serializer.java": "6aaec7d5031c0d50912f475268b2fc63b924c29a5f4dfb6c2d3861c6fc1e972f",
+    "src/main/java/com/productreviewapisdk/http/serialization/Util.java": "5af87001ec76e338c7a22d98fbd8a576422d9646c9a1819a6bcffd377472e01e",
+    "src/main/java/com/productreviewapisdk/http/util/ContentTypes.java": "b62419fae4d889f5b18571cf8bb08f6a3849041c34e630a5b7f8206ce3f8bda7",
+    "src/main/java/com/productreviewapisdk/http/util/HttpArgumentConverter.java": "a0a6bc7dabef14d9c12fc3487e3a556a8a30399f8775b5865924f46be8db8070",
+    "src/main/java/com/productreviewapisdk/http/util/RequestBuilder.java": "62ea77ee5b390ac8302c818c769e2dda20591d61dd143ab97ba200f46cf2865d",
+    "src/main/java/com/productreviewapisdk/json/TypeUtils.java": "019d32ca949bd449a4025c6b15c0be6b934e8a8af33283b2e724f4dcb7931435",
+    "src/main/java/com/productreviewapisdk/models/CreateProductRequest.java": "d6125f0a3e386d2d5c19a59c15c4ad1755ea830beeebe1ecbd1adbdaca45ecbb",
+    "src/main/java/com/productreviewapisdk/models/CreateReviewRequest.java": "21a4137892e68f7274c8e488ac40a624dad79abb8ca7e423c8c74d1ee62dbe40",
+    "src/main/java/com/productreviewapisdk/models/LoginRequest.java": "d423ee3e662d75b0a0201155c3cbced9da20c96c51099a2ad452c08acceeea8e",
+    "src/main/java/com/productreviewapisdk/models/RegisterUserRequest.java": "8b93e11f4c8a1fa331f955dbd22ee7d7208d20ab02d602bb4bb7e6bb8e4809df",
+    "src/main/java/com/productreviewapisdk/models/UpdateProductRequest.java": "ed1f4f5f774b32e91275495fb098b2af081a1e79224cd1e514a5cb15ccc49940",
+    "src/main/java/com/productreviewapisdk/services/BaseService.java": "c66f0f2f67cd2f23e7b6456b4259325cd49d88d1e51f1bd92568f801846fd52a",
+    "src/main/java/com/productreviewapisdk/services/ProductReviewApiSdkService.java": "16698af4769507e23ba6b5b32b20ce75cb47e062bcfa0f11b1f76af665bd0754",
+    "src/main/java/com/productreviewapisdk/validation/Violation.java": "deb096cd88a879f32c772afbeab48a0840269f5d9e9216188c7a227d284793e8",
+    "src/main/java/com/productreviewapisdk/validation/ViolationAggregator.java": "029f224a26aade9b5e37e3dc6ab68cf44c2b0395a45adef308d439f7efcac1f2",
+    "src/main/java/com/productreviewapisdk/validation/exceptions/ValidationException.java": "e2a463bee216dc12f0c49b822f03128a864ef9e76d51e4faafc293c6d02e0ad9",
+    "src/main/java/com/productreviewapisdk/validation/validators/AbstractValidator.java": "ee103065f0db261ded06ee54b890fd1fc3ccd106efb07bb9979d6d87aa972eeb",
+    "src/main/java/com/productreviewapisdk/validation/validators/ListValidator.java": "fcc2716f520195afdb2cb1a0a9231819114aad6b3bc4349795d284371ec52879",
+    "src/main/java/com/productreviewapisdk/validation/validators/NumericValidator.java": "2fa1e2bf2fd8983618909b7e7eb903aafcc18a16842641e495a5d9cc37373867",
+    "src/main/java/com/productreviewapisdk/validation/validators/StringValidator.java": "04a0bb16a19ff995bde0d3fb4211db12bb8b0cefc7625d2a5b9d543acf771197",
+    "src/main/java/com/productreviewapisdk/validation/validators/Validator.java": "fb44a26573c3e35f4280a14b1a1e0cb081b2c931ebe0e81f6313822ddfd5b154",
+    "src/main/java/com/productreviewapisdk/validation/validators/modelValidators/AbstractModelValidator.java": "8b22b53b51393ad5aad77235fab68f2d9e81841112a4208879b7cda7a6c1900b"
+  }
+}

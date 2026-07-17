@@ -1,0 +1,14 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/users/usr_123"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: json
+    content: '{"error":"User not found"}'
+order: 2000

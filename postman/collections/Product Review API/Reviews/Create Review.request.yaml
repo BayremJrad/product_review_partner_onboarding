@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/products/:productId/reviews"
+method: POST
+headers:
+  Content-Type: application/json
+pathVariables:
+  productId: ""
+body:
+  type: text
+  content: |-
+    {
+      "rating": 5,
+      "title": "Great product!",
+      "body": "Really happy with this purchase. Sound quality is excellent.",
+      "userId": "usr_123"
+    }
+examples: ./.resources/Create Review.resources/examples
+order: 2000

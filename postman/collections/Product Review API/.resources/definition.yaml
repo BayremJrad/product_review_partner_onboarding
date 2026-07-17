@@ -1,0 +1,8 @@
+$kind: collection
+name: Product Review API
+variables:
+  - key: baseUrl
+    value: https://api.productreview.com/v1
+    secret: false
+  - key: supabase_service_role_api_key_07bt
+    secret: true

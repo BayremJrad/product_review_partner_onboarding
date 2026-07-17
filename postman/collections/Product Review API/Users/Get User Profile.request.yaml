@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/users/:userId"
+method: GET
+pathVariables:
+  userId: ""
+examples: ./.resources/Get User Profile.resources/examples
+order: 3000

@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products/prod_001/reviews"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "rating": 6,
+        "title": "Amazing",
+        "body": "Best ever",
+        "userId": "usr_123"
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: '{"error":"Validation failed","details":["rating must be between 1 and 5"]}'
+order: 2000

@@ -1,0 +1,14 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products/prod_001"
+  method: DELETE
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 204
+  statusText: No Content
+  body:
+    type: text
+    content: " "
+order: 1000

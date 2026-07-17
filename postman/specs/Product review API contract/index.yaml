@@ -1,0 +1,538 @@
+openapi: 3.0.0
+info:
+  title: Product Review API
+  version: 1.0.XX
+  description: 'This is a description'
+servers:
+  - url: https://api.productreview.com/v1
+paths:
+  /products:
+    get:
+      summary: List Products
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        price:
+                          type: number
+                        category:
+                          type: string
+                        averageRating:
+                          type: number
+                        reviewCount:
+                          type: integer
+                  total:
+                    type: integer
+                  page:
+                    type: integer
+                  limit:
+                    type: integer
+              example:
+                data:
+                  - id: prod_001
+                    name: Wireless Headphones
+                    description: Over-ear noise cancelling headphones
+                    price: 79.99
+                    category: Electronics
+                    averageRating: 4.5
+                    reviewCount: 128
+                  - id: prod_002
+                    name: Running Shoes
+                    description: Lightweight trail running shoes
+                    price: 119.99
+                    category: Sports
+                    averageRating: 4.2
+                    reviewCount: 64
+                total: 2
+                page: 1
+                limit: 20
+      tags:
+        - Products
+    post:
+      summary: Create Product
+      responses:
+        '201':
+          description: 201 Created - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  price:
+                    type: number
+                  category:
+                    type: string
+                  averageRating:
+                    type: integer
+                  reviewCount:
+                    type: integer
+                  createdAt:
+                    type: string
+                    format: date-time
+              example:
+                id: prod_001
+                name: Wireless Headphones
+                description: Over-ear noise cancelling headphones
+                price: 79.99
+                category: Electronics
+                averageRating: 0
+                reviewCount: 0
+                createdAt: '2026-07-17T10:00:00Z'
+        '400':
+          description: 400 Bad Request - Validation Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  details:
+                    type: array
+                    items:
+                      type: string
+              example:
+                error: Validation failed
+                details:
+                  - name is required
+                  - price is required
+      tags:
+        - Products
+  /products/{productId}:
+    get:
+      summary: Get Product
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  price:
+                    type: number
+                  category:
+                    type: string
+                  averageRating:
+                    type: number
+                  reviewCount:
+                    type: integer
+                  createdAt:
+                    type: string
+                    format: date-time
+              example:
+                id: prod_001
+                name: Wireless Headphones
+                description: Over-ear noise cancelling headphones
+                price: 79.99
+                category: Electronics
+                averageRating: 4.5
+                reviewCount: 128
+                createdAt: '2026-07-17T10:00:00Z'
+        '404':
+          description: 404 Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Product not found
+      tags:
+        - Products
+    parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ''
+    put:
+      summary: Update Product
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  price:
+                    type: number
+                  category:
+                    type: string
+                  averageRating:
+                    type: number
+                  reviewCount:
+                    type: integer
+                  updatedAt:
+                    type: string
+                    format: date-time
+              example:
+                id: prod_001
+                name: Wireless Headphones Pro
+                description: Over-ear noise cancelling headphones
+                price: 89.99
+                category: Electronics
+                averageRating: 4.5
+                reviewCount: 128
+                updatedAt: '2026-07-17T12:00:00Z'
+      tags:
+        - Products
+    delete:
+      summary: Delete Product
+      responses:
+        '204':
+          description: 204 No Content - Success
+      tags:
+        - Products
+  /products/{productId}/reviews:
+    get:
+      summary: List Reviews
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        productId:
+                          type: string
+                        userId:
+                          type: string
+                        userName:
+                          type: string
+                        rating:
+                          type: integer
+                        title:
+                          type: string
+                        body:
+                          type: string
+                        createdAt:
+                          type: string
+                          format: date-time
+                  total:
+                    type: integer
+                  page:
+                    type: integer
+                  limit:
+                    type: integer
+              example:
+                data:
+                  - id: rev_001
+                    productId: prod_001
+                    userId: usr_123
+                    userName: Jane Doe
+                    rating: 5
+                    title: Great product!
+                    body: >-
+                      Really happy with this purchase. Sound quality is
+                      excellent.
+                    createdAt: '2026-07-10T08:00:00Z'
+                  - id: rev_002
+                    productId: prod_001
+                    userId: usr_456
+                    userName: John Smith
+                    rating: 4
+                    title: Good but pricey
+                    body: Sound is great but a bit expensive for what you get.
+                    createdAt: '2026-07-12T14:30:00Z'
+                total: 2
+                page: 1
+                limit: 20
+      tags:
+        - Reviews
+    parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ''
+    post:
+      summary: Create Review
+      responses:
+        '201':
+          description: 201 Created - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  productId:
+                    type: string
+                  userId:
+                    type: string
+                  userName:
+                    type: string
+                  rating:
+                    type: integer
+                  title:
+                    type: string
+                  body:
+                    type: string
+                  createdAt:
+                    type: string
+                    format: date-time
+              example:
+                id: rev_001
+                productId: prod_001
+                userId: usr_123
+                userName: Jane Doe
+                rating: 5
+                title: Great product!
+                body: Really happy with this purchase. Sound quality is excellent.
+                createdAt: '2026-07-17T10:00:00Z'
+        '400':
+          description: 400 Bad Request - Invalid Rating
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  details:
+                    type: array
+                    items:
+                      type: string
+              example:
+                error: Validation failed
+                details:
+                  - rating must be between 1 and 5
+      tags:
+        - Reviews
+  /products/{productId}/reviews/{reviewId}:
+    get:
+      summary: Get Review
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  productId:
+                    type: string
+                  userId:
+                    type: string
+                  userName:
+                    type: string
+                  rating:
+                    type: integer
+                  title:
+                    type: string
+                  body:
+                    type: string
+                  createdAt:
+                    type: string
+                    format: date-time
+              example:
+                id: rev_001
+                productId: prod_001
+                userId: usr_123
+                userName: Jane Doe
+                rating: 5
+                title: Great product!
+                body: Really happy with this purchase. Sound quality is excellent.
+                createdAt: '2026-07-10T08:00:00Z'
+      tags:
+        - Reviews
+    parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ''
+      - name: reviewId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ''
+    delete:
+      summary: Delete Review
+      responses:
+        '204':
+          description: 204 No Content - Success
+      tags:
+        - Reviews
+  /users/register:
+    post:
+      summary: Register User
+      responses:
+        '201':
+          description: 201 Created - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  email:
+                    type: string
+                    format: email
+                  createdAt:
+                    type: string
+                    format: date-time
+              example:
+                id: usr_123
+                name: Jane Doe
+                email: jane@example.com
+                createdAt: '2026-07-17T10:00:00Z'
+        '409':
+          description: 409 Conflict - Email Already Exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Email already in use
+      tags:
+        - Users
+  /users/login:
+    post:
+      summary: Login
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      email:
+                        type: string
+                        format: email
+              example:
+                token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.example
+                user:
+                  id: usr_123
+                  name: Jane Doe
+                  email: jane@example.com
+        '401':
+          description: 401 Unauthorized - Invalid Credentials
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Invalid email or password
+      tags:
+        - Users
+  /users/{userId}:
+    get:
+      summary: Get User Profile
+      responses:
+        '200':
+          description: 200 OK - Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  email:
+                    type: string
+                    format: email
+                  reviewCount:
+                    type: integer
+                  createdAt:
+                    type: string
+                    format: date-time
+              example:
+                id: usr_123
+                name: Jane Doe
+                email: jane@example.com
+                reviewCount: 12
+                createdAt: '2026-01-15T09:00:00Z'
+        '404':
+          description: 404 Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: User not found
+      tags:
+        - Users
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ''

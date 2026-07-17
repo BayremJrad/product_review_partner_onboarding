@@ -1,0 +1,14 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: '{"data":[{"id":"prod_001","name":"Wireless Headphones","description":"Over-ear noise cancelling headphones","price":79.99,"category":"Electronics","averageRating":4.5,"reviewCount":128},{"id":"prod_002","name":"Running Shoes","description":"Lightweight trail running shoes","price":119.99,"category":"Sports","averageRating":4.2,"reviewCount":64}],"total":2,"page":1,"limit":20}'
+order: 1000

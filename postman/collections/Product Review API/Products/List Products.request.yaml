@@ -1,0 +1,5 @@
+$kind: http-request
+url: "{{baseUrl}}/products"
+method: GET
+examples: ./.resources/List Products.resources/examples
+order: 1000

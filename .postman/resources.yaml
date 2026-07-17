@@ -1,0 +1,7 @@
+workspace:
+  id: 8db85169-fb7a-4adf-ad08-e213fd0682c9
+cloudResources:
+  collections:
+    ../postman/collections/Product Review API: 53785387-71c31ea2-f7bb-4d41-baff-0f7b36b13605
+  specs:
+    ../postman/specs/Product review API contract/index.yaml: 7b26d314-5831-40a6-9f44-2f43db7a07c2

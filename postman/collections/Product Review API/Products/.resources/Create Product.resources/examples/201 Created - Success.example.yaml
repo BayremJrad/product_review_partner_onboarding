@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "Wireless Headphones",
+        "description": "Over-ear noise cancelling headphones",
+        "price": 79.99,
+        "category": "Electronics"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: '{"id":"prod_001","name":"Wireless Headphones","description":"Over-ear noise cancelling headphones","price":79.99,"category":"Electronics","averageRating":0,"reviewCount":0,"createdAt":"2026-07-17T10:00:00Z"}'
+order: 1000

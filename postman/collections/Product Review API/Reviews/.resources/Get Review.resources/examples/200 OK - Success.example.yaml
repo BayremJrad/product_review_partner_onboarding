@@ -1,0 +1,14 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products/prod_001/reviews/rev_001"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: '{"id":"rev_001","productId":"prod_001","userId":"usr_123","userName":"Jane Doe","rating":5,"title":"Great product!","body":"Really happy with this purchase. Sound quality is excellent.","createdAt":"2026-07-10T08:00:00Z"}'
+order: 1000

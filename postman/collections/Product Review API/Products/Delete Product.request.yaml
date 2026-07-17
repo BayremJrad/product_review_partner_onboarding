@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/products/:productId"
+method: DELETE
+pathVariables:
+  productId: ""
+examples: ./.resources/Delete Product.resources/examples
+order: 5000

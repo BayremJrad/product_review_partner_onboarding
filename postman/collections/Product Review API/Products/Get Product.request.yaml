@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/products/:productId"
+method: GET
+pathVariables:
+  productId: ""
+examples: ./.resources/Get Product.resources/examples
+order: 3000

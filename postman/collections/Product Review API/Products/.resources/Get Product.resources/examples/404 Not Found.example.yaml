@@ -1,0 +1,14 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/products/prod_001"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: json
+    content: '{"error":"Product not found"}'
+order: 2000

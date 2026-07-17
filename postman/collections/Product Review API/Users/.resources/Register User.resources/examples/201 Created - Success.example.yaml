@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/users/register"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "Jane Doe",
+        "email": "jane@example.com",
+        "password": "securepassword123"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: '{"id":"usr_123","name":"Jane Doe","email":"jane@example.com","createdAt":"2026-07-17T10:00:00Z"}'
+order: 1000
