@@ -1,10 +1,10 @@
 $kind: http-request
-url: "{{baseUrl}}/products/:productId"
+url: '{{baseUrl}}/products/:productId'
 method: PUT
 headers:
   Content-Type: application/json
 pathVariables:
-  productId: ""
+  productId: '{{productId}}'
 body:
   type: text
   content: |-
@@ -12,5 +12,17 @@ body:
       "name": "Wireless Headphones Pro",
       "price": 89.99
     }
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response reflects updated fields", function () {
+          const json = pm.response.json();
+          pm.expect(json.name).to.eql("Wireless Headphones Pro");
+          pm.expect(json.price).to.eql(89.99);
+      });
 examples: ./.resources/Update Product.resources/examples
 order: 4000

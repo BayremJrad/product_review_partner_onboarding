@@ -1,8 +1,22 @@
 $kind: http-request
-url: "{{baseUrl}}/products/:productId/reviews/:reviewId"
+url: '{{baseUrl}}/products/:productId/reviews/:reviewId'
 method: GET
 pathVariables:
-  productId: ""
-  reviewId: ""
+  productId: '{{productId}}'
+  reviewId: '{{reviewId}}'
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has expected review fields", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("id");
+          pm.expect(json).to.have.property("rating");
+          pm.expect(json).to.have.property("title");
+          pm.expect(json).to.have.property("body");
+      });
 examples: ./.resources/Get Review.resources/examples
 order: 3000

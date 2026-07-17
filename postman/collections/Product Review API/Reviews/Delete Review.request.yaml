@@ -1,8 +1,14 @@
 $kind: http-request
-url: "{{baseUrl}}/products/:productId/reviews/:reviewId"
+url: '{{baseUrl}}/products/:productId/reviews/:reviewId'
 method: DELETE
 pathVariables:
-  productId: ""
-  reviewId: ""
+  productId: '{{productId}}'
+  reviewId: '{{reviewId}}'
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 204", function () {
+          pm.response.to.have.status(204);
+      });
 examples: ./.resources/Delete Review.resources/examples
 order: 4000
