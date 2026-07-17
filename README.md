@@ -115,3 +115,44 @@ Postman makes it easy to explore the contract before you write a single line of 
 <p align="center">
   <em>The road ahead is yours to navigate. Fire up your engines. 🚗💨🌌</em>
 </p>
+
+---
+
+## 🐍 FastAPI Implementation
+
+A Python FastAPI implementation of the Product Review API.
+
+### Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Run the server
+```bash
+uvicorn app.main:app --reload
+```
+
+The API will be available at `http://localhost:8000`.
+
+Interactive docs (Swagger UI): `http://localhost:8000/docs`
+
+### API Overview
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | /products | List all products |
+| POST | /products | Create a product |
+| GET | /products/{productId} | Get a product |
+| PUT | /products/{productId} | Update a product |
+| DELETE | /products/{productId} | Delete a product |
+| GET | /products/{productId}/reviews | List reviews |
+| POST | /products/{productId}/reviews | Create a review |
+| GET | /products/{productId}/reviews/{reviewId} | Get a review |
+| DELETE | /products/{productId}/reviews/{reviewId} | Delete a review |
+| POST | /users/register | Register a user |
+| POST | /users/login | Login |
+| GET | /users/{userId} | Get user profile |
+
+### Notes
+- Data is stored in-memory and resets on server restart.
+- JWT tokens are issued on login. `SECRET_KEY` in `app/routers/users.py` should be changed for production.
