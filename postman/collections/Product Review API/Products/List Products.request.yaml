@@ -1,5 +1,43 @@
 $kind: http-request
+name: List Products
 url: "{{baseUrl}}/products"
 method: GET
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has data array", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("data").that.is.an("array");
+      });
+
+      pm.test("Response has pagination fields", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("total");
+          pm.expect(json).to.have.property("page");
+          pm.expect(json).to.have.property("limit");
+      });
+scripts:
+  - type: afterResponse
+    code: |2-
+       pm.test("Status code is 200", function () {
+                pm.response.to.have.status(200);
+            });
+
+            pm.test("Response has data array", function () {
+                const json = pm.response.json();
+                pm.expect(json).to.have.property("data").that.is.an("array");
+            });
+
+            pm.test("Response has pagination fields", function () {
+                const json = pm.response.json();
+                pm.expect(json).to.have.property("total");
+                pm.expect(json).to.have.property("page");
+                pm.expect(json).to.have.property("limit");
+            });
+    language: text/javascript
 examples: ./.resources/List Products.resources/examples
 order: 1000

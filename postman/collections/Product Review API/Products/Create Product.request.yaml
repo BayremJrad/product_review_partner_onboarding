@@ -12,5 +12,23 @@ body:
       "price": 79.99,
       "category": "Electronics"
     }
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 201", function () {
+          pm.response.to.have.status(201);
+      });
+
+      pm.test("Response has product id", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("id");
+          pm.collectionVariables.set("productId", json.id);
+      });
+
+      pm.test("Response contains submitted fields", function () {
+          const json = pm.response.json();
+          pm.expect(json.name).to.eql("Wireless Headphones");
+          pm.expect(json.price).to.eql(79.99);
+      });
 examples: ./.resources/Create Product.resources/examples
 order: 2000

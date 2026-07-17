@@ -10,5 +10,24 @@ body:
       "email": "jane@example.com",
       "password": "securepassword123"
     }
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has token", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("token").that.is.a("string");
+          pm.collectionVariables.set("authToken", json.token);
+      });
+
+      pm.test("Response has user object", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("user");
+          pm.expect(json.user).to.have.property("id");
+          pm.expect(json.user).to.have.property("email");
+      });
 examples: ./.resources/Login.resources/examples
 order: 2000

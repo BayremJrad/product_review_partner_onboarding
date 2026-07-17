@@ -14,5 +14,22 @@ body:
       "body": "Really happy with this purchase. Sound quality is excellent.",
       "userId": "usr_123"
     }
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 201", function () {
+          pm.response.to.have.status(201);
+      });
+
+      pm.test("Response has review id", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("id");
+          pm.collectionVariables.set("reviewId", json.id);
+      });
+
+      pm.test("Rating is within valid range", function () {
+          const json = pm.response.json();
+          pm.expect(json.rating).to.be.within(1, 5);
+      });
 examples: ./.resources/Create Review.resources/examples
 order: 2000

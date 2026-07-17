@@ -1,7 +1,21 @@
 $kind: http-request
-url: "{{baseUrl}}/users/:userId"
+url: '{{baseUrl}}/users/:userId'
 method: GET
 pathVariables:
-  userId: ""
+  userId: '{{userId}}'
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has expected user fields", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("id");
+          pm.expect(json).to.have.property("name");
+          pm.expect(json).to.have.property("email");
+          pm.expect(json).to.have.property("reviewCount");
+      });
 examples: ./.resources/Get User Profile.resources/examples
 order: 3000

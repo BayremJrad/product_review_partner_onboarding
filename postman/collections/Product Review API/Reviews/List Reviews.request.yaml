@@ -1,7 +1,25 @@
 $kind: http-request
-url: "{{baseUrl}}/products/:productId/reviews"
+url: '{{baseUrl}}/products/:productId/reviews'
 method: GET
 pathVariables:
-  productId: ""
+  productId: '{{productId}}'
+events:
+  - listen: test
+    script: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has data array", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("data").that.is.an("array");
+      });
+
+      pm.test("Response has pagination fields", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property("total");
+          pm.expect(json).to.have.property("page");
+          pm.expect(json).to.have.property("limit");
+      });
 examples: ./.resources/List Reviews.resources/examples
 order: 1000
